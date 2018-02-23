@@ -1,0 +1,101 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../styles/shared-styles.html">
+<link rel="import" href="../behaviors/localize-behavior.html">
+
+
+<dom-module id="mentors-block">
+
+  <template>
+
+    <style include="shared-styles">
+      :host {
+        --iron-icon-fill-color: var(--default-primary-color);
+        --paper-card-background-color: #FFFFFF;
+        display: block;
+        background: var(--text-primary-color);
+        color: var(--default-primary-color);
+        text-align: center;
+      }
+
+      .mentors-wrapper {
+        @apply(--layout-horizontal);
+        @apply(--layout-wrap);
+        @apply(--layout-center-justified);
+      }
+
+
+      paper-button {
+        font-size: 1.25em;
+		min-width: 150px;
+		min-height:100px;
+      }
+
+      .details {
+        margin: 10px auto 0;
+        font-size: 14px;
+        max-width: 600px;
+      }
+
+      .buy-button {
+        margin-top: 30px;
+        background: #fff;
+        color: var(--primary-text-color);
+      }
+
+      paper-dialog {
+        background: #fff;
+        color: var(--primary-text-color);
+      }
+
+      paper-dialog paper-button {
+        color: var(--default-primary-color);
+      }
+
+    
+	  center {
+	  text: #FFFFFF;
+	  }
+    </style>
+
+    <div class="container">
+   
+
+      <a href$="[[app.data.mentors.url]]" target="_blank" rel="noopener noreferrer" on-tap="_trackBuyClick">
+        <paper-button class="buy-button" raised> Mentor</paper-button>
+		
+      </a>
+	  <center>If you have excessive programming experience or are a college student and would like to mentor for HackTrin, you can sign up below.  As a mentor you will aid the participants with their projects and can take advantage of everything HackTrin has to offer, including our workshops. Hope to see you there! Email emily.mattlin17@trinityschoolnyc.org with any questions.</center>
+    </div>
+	
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'mentors-block',
+
+        behaviors: [
+          HOVERBOARD.LocalizeBehavior
+        ],
+
+        ready: function () {
+          HOVERBOARD.Elements.Mentors = this;
+        },
+
+        _trackBuyClick: function (e) {
+          HOVERBOARD.Analytics.trackEvent('mentors', 'buy_click', e.currentTarget.href);
+        }
+
+      });
+
+    }());
+  </script>
+
+</dom-module>

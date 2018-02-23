@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Core Team",
+    "members": [
+      {
+        "name": "Nicholas Mullikin '17",
+        "photoUrl": "/images/people/Nick.jpg",
+        "socials": [{}],
+        "title": "Senior Website Manager"
+      },
+      {
+        "name": "Emily Mattlin '17",
+        "photoUrl": "/images/people/Emily.jpg",
+        "socials": [{}],
+        "title": "President"
+      },
+      {
+        "name": "Bennet Varricione '17",
+        "photoUrl": "/images/people/Bennet.jpg",
+        "socials": [{}],
+        "title": "Senior Schedule Coordinator"
+      },
+      {
+        "name": "Jeffrey Shi '17",
+        "photoUrl": "/images/people/Jeffrey.jpg",
+        "socials": [{}],
+        "title": "Management Chair"
+      },
+      {
+        "name": "Jake Fisher '18",
+        "photoUrl": "/images/people/Jake.jpg",
+        "socials": [{}],
+        "title": " Vice President"
+      },
+      {
+        "name": "Karen Shi '18",
+        "photoUrl": "/images/people/Karen.jpg",
+        "socials": [{}],
+        "title": "Marketing team"
+      },
+      {
+        "name": "Eli Schiff '18",
+        "photoUrl": "/images/people/Eli.jpg",
+        "socials": [{}],
+        "title": "Marketing team"
+      }
+    ]
+  },
+  {
+    "title": "Teachers",
+    "members": [
+      {
+        "name": "Justin Gohde",
+        "photoUrl": "/images/people/noPhoto.png",
+        "socials": [{}],
+        "title": ""
+      },
+      {
+        "name": "Andrew Rose",
+        "photoUrl": "/images/people/noPhoto.png",
+        "socials": [{}],
+        "title": ""
+      }
+    ]
+  }
+]

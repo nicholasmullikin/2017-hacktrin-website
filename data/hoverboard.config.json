@@ -1,0 +1,197 @@
+{
+  "firebase": {
+    "name": "HackTrin",
+    "domain": "hacktrin.firebaseapp.com",
+    "database": "https://hacktrin.firebaseio.com",
+    "api": "AIzaSyDRqqesmwftq3dd1Ayr2zAeoQygDooN8F4",
+    "userSessionsPath": "/userSessions"
+  },
+  "pages": {
+    "home": {
+      "headerSettings": {
+        "backgroundColor": "#808080",
+        "backgroundImage": "/images/backgrounds/home.png",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff",
+        "video": {
+          "title": "HackTrin",
+          "youtubeId": "TdpbgRgz6eE",
+          "text": "See how it was in 2016"
+        },
+        "hideLogo": true,
+        "minHeight": "360px"
+      }
+    },
+    "speakers": {
+      "headerSettings": {
+        "backgroundColor": "#3f51b5",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "schedule": {
+      "headerSettings": {
+        "backgroundColor": "#673ab7",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "team": {
+      "headerSettings": {
+        "backgroundColor": "#009688",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "cod": {
+      "headerSettings": {
+        "backgroundColor": "#673ab7",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "faq": {
+      "headerSettings": {
+        "backgroundColor": "#03a9f4",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    }
+  },
+  "navigation": [
+    {
+      "route": "home",
+      "permalink": "/"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/"
+    },
+    {
+      "route": "speakers",
+      "permalink": "/speakers/"
+    },
+    {
+      "route": "team",
+      "permalink": "/team/"
+    }
+  ],
+  "url": "https://hoverboard.firebaseapp.com/",
+  "mailchimp": {
+    "url": "https://gdg.us11.list-manage.com/subscribe/post?u=b7e853a79164ddfdbda3ed77b&amp;id=7993e39fbe",
+    "name": "b_b7e853a79164ddfdbda3ed77b_7993e39fbe"
+  },
+  "partnershipProposition": "mailto:emily.mattlin17@trinityschoolnyc.org",
+  "disqusShortName": "hacktrin",
+  "languages": [
+    {
+      "name": "English",
+      "key": "en"
+    }
+  ],
+  "footerBlocks": [
+    {
+      "title": "for-partners",
+      "links": [
+        {
+          "text": "partnership-proposition",
+          "url": "https://support.trinityschoolnyc.org/computerscienceangels",
+          "newTab": true
+        },
+         {
+          "text": "full-sponsor",
+          "url": "mailto:emily.mattlin17@trinityschoolnyc.org",
+          "newTab": false
+        }
+      ]
+    }
+  ],
+  "contactBlock": {
+    "links": [
+      {
+        "text": "emily.mattlin17@trinityschoolnyc.org",
+        "url": "mailto:emily.mattlin17@trinityschoolnyc.org"
+      }
+    ]
+  },
+  "tickets": {
+    "url": "mailto:hacktrin1709@gmail.com",
+    "elements": [
+      {
+        "name": "student-ticket",
+        "price": "Free",
+        "currency": "",
+        "starts": "student-ticket-starts",
+        "ends": "student-ticket-ends",
+        "info": "student-ticket-info",
+        "soldOut": false
+      }
+    ]
+  },
+  "mentors": {
+    "url": "mailto:hacktrin1709@gmail.com"
+  },
+  "teamPageTitle": "team-page-title",
+  "teamPageText": "team-page-text",
+  "statistics": [
+    {
+      "counter": "Create",
+      "caption": "hardware or software"
+    },
+    {
+      "counter": "Learn",
+      "caption": "open to beginners"
+    },
+    {
+      "counter": "12",
+      "caption": "hours"
+    }
+  ],
+  "hashtag": "dfua",
+  "social": [
+    {
+      "name": "twitter",
+      "nickname": "HackTrin",
+      "url": "https://twitter.com/HackTrin"
+    },
+    {
+      "name": "facebook",
+      "nickname": "hacktrin",
+      "url": "https://www.facebook.com/hacktrin/"
+    }
+  ],
+  "tweetsSource": "/data/tweets.json",
+  "gallery": {
+    "albumUrl": "http://hacktrin.weebly.com/gallery.html",
+    "photos": {
+      "big": "/images/backgrounds/2015_1.jpg",
+      "small": [
+        "/images/backgrounds/2015_2.jpg",
+        "/images/backgrounds/2015_3.jpg"
+      ]
+    }
+  },
+  "location": {
+    "apiKey": "AIzaSyCe-Ju7OcgNv6NAkL-wQFz9LUPJpr-cZ0A",
+    "link": "https://www.facebook.com/trinityschoolnyc/",
+    "pointer": {
+      "latitude": 40.7905327,
+      "longitude": -73.9734873,
+      "zoom": 15
+    },
+    "mapCenter": {
+      "latitude": 40.7905327,
+      "longitude": -73.9734873
+    },
+    "images": [
+      "/images/backgrounds/location_1.jpg",
+      "/images/backgrounds/location_2.jpg",
+      "/images/backgrounds/location_3.jpg"
+    ]
+  },
+  "videosSessionsUrl": "https://www.youtube.com/playlist?list=PLt8lEzcLNl31AX3-ONkkWmDOZezu9Cmnv",
+  "callToAction": {
+    "videoTitle": "action-title",
+    "videoId": "DfMnJAzOFng"
+  }
+}

@@ -1,0 +1,282 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<link rel="import" href="../styles/shared-styles.html">
+<link rel="import" href="../js-wrappers/g-plusone.html">
+<link rel="import" href="../behaviors/localize-behavior.html">
+<link rel="import" href="../behaviors/share-behavior.html">
+<link rel="import" href="mailchimp-subscribe.html">
+
+<link rel="import" href="../../bower_components/neon-animation/neon-animated-pages.html">
+
+
+<dom-module id="header-content">
+
+  <template>
+
+    <style include="shared-styles">
+      :host {
+        --paper-tabs-selection-bar-color: #FFFFFF;
+        --paper-tab-ink: rgba(255, 255, 255, 0.2);
+        --paper-tab-content: {
+          font-weight: 400 !important;
+        };
+        --paper-tab: {
+          color: #FFFFFF;
+          font-weight: 400;
+          text-transform: uppercase;
+          flex: none;
+        };
+        display: block;
+        position: relative;
+        overflow: hidden;
+      }
+
+      app-toolbar {
+        min-height: var(--min-header-height, 120px);
+        max-height: 360px;
+      }
+
+      .container {
+        @apply(--layout-vertical-reverse);
+        padding-top: 0;
+        padding-bottom: 20px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .reset-padding-bottom {
+        padding-bottom: 0 !important;
+      }
+
+      neon-animated-pages {
+        width: 100%;
+        height: 100%;
+      }
+
+      .page-title {
+        margin: 0;
+      }
+
+      .page-subtitle {
+        font-size: 16px;
+      }
+
+      .home-wrapper {
+        width: 100%;
+        font-size: 18px;
+      }
+
+      .logo {
+        width: 240px;
+        min-height: 80px;
+      }
+
+      .dates {
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+
+      .motto {
+        margin-top: 20px;
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .action-buttons {
+        margin-top: 40px;
+      }
+
+      paper-button {
+        font-size: 0.8em;
+        color: #fff;
+      }
+
+      .open-video {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .open-video iron-icon {
+        margin-right: 5px;
+      }
+
+	  
+	  paper-item,
+      paper-icon-item {
+        cursor: pointer;
+      }
+
+      @media (min-width: 601px) {
+	    .container {
+          padding-bottom: 40px;
+        }
+
+        .home-wrapper {
+          width: 50%;
+          max-width: 500px;
+        }
+
+        app-toolbar {
+          min-height: 360px;
+        }
+        .footer-backtotop {
+          margin-bottom: 0;
+        }
+
+        .footer-content {
+          padding-top: 32px;
+        }
+
+        .navigation {
+          @apply(--layout-horizontal);
+          @apply(--layout-wrap);
+        }
+
+        .link-block-wrapper {
+          width: 50%;
+        }
+
+        .link-block-title {
+          margin-bottom: 15px;
+        }
+
+        .gplus {
+          padding: 0;
+        }
+
+        .footer-bottom {
+          margin-top: 0;
+        }
+      }
+	  @media (min-width: 961px) {
+        .link-block-wrapper,
+        .subscribe {
+          @apply(--layout-flex);
+        }
+      }
+	  .icons-wrapper {
+        margin-top: 15px;
+      }
+	  h6 {
+		margin-top: 5px;
+		margin-bottom: -10px;
+		margin-left: 10px;
+		font-style: normal;
+	  }
+    </style>
+
+    <app-toolbar>
+      <neon-animated-pages attr-for-selected="name" selected="{{app.page}}">
+        <animatable-content name="home">
+          <div class="container" center-justified>
+            <div class="home-wrapper">
+              <iron-image class="logo" src="/images/logo-light.svg" sizing="contain"
+                          alt="HackTrin IV"></iron-image>
+              <h3 class="dates">{{localize('dates')}}</h3>
+              <h2 class="motto">{{localize('motto')}}</h2>
+			  <h6 class="text-under-motto"> {{localize('text-under-motto')}} </h6>
+			  
+             <div class="icons-wrapper align-pb-block">
+              <template is="dom-repeat" items="[[app.data.social]]" as="network">
+                <a class="button-link" href$="[[network.url]]" target="_blank" rel="noopener noreferrer">
+                  <paper-icon-button icon="icons:[[network.name]]"></paper-icon-button>
+                </a>
+              </template>
+            </div>
+             
+            </div>
+          </div>
+        </animatable-content>
+        <animatable-content name="blog">
+          <div class="container">
+            <h3 class="page-title" hidden$="{{app.headerSettings.title}}">{{localize('blog')}}</h3>
+            <h3 class="page-title" hidden$="{{!app.headerSettings.title}}">[[app.headerSettings.title]]</h3>
+            <div class="page-subtitle" hidden$="{{!app.headerSettings.subtitle}}">[[app.headerSettings.subtitle]]</div>
+          </div>
+        </animatable-content>
+        <animatable-content name="speakers">
+          <div class="container">
+            <h3 class="page-title">{{localize('speakers')}}</h3>
+          </div>
+        </animatable-content>
+        <animatable-content name="schedule">
+          <div class="container">
+            <h3 class="page-title">{{localize('schedule')}}</h3>
+          </div>
+        </animatable-content>
+        <animatable-content name="team">
+          <div class="container">
+            <h3 class="page-title">{{localize('team')}}</h3>
+          </div>
+        </animatable-content>
+        <animatable-content name="cod">
+          <div class="container">
+            <h3 class="page-title">{{localize('cod')}}</h3>
+          </div>
+        </animatable-content>
+      </neon-animated-pages>
+    </app-toolbar>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+
+        is: 'header-content',
+
+        behaviors: [
+          HOVERBOARD.LocalizeBehavior
+        ],
+
+        properties: {
+          app: {
+            type: Object
+          },
+          schedule: Array,
+          selectedDay: {
+            type: Number,
+            notify: true,
+            value: 0
+          }
+        },
+
+        _openVideo: function () {
+          HOVERBOARD.Elements.Template.openVideo(this.app.data.pages.home.headerSettings.video.title,
+            this.app.data.pages.home.headerSettings.video.youtubeId, true);
+          HOVERBOARD.Analytics.trackEvent('video', 'watch', this.app.data.pages.home.headerSettings.video.title);
+        },
+
+        _scrollToTickets: function () {
+          HOVERBOARD.Analytics.trackEvent('ticket', 'buy_click', 'header');
+          Polymer.AppLayout.scroll({
+            top: HOVERBOARD.Elements.Tickets.getBoundingClientRect().top,
+            behavior: 'smooth',
+            target: HOVERBOARD.Elements.Scroller
+          });
+        }
+
+      });
+
+    }());
+  </script>
+
+</dom-module>
